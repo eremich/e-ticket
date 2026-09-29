@@ -1,0 +1,33 @@
+// Dev check: pay at the turnstile end to end (declined → Apple Pay → tap again → paid), then Card screens.
+// Usage: node scripts/flow-pay.mjs out.png (dev server on 5174)
+import { chromium } from 'playwright';
+const out = process.argv[2];
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 1280, height: 940 }, reducedMotion: 'reduce' });
+const errors = [];
+p.on('pageerror', (e) => errors.push(e.message));
+p.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+const shots = [];
+const snap = async (label) => shots.push({ label, b64: (await p.locator('#phone').screenshot()).toString('base64') });
+await p.goto('http://localhost:5174/?theme=light');
+await p.waitForTimeout(900);
+await p.getByRole('button', { name: 'Tap at validator' }).click();
+await p.waitForTimeout(300); await snap('hold');
+await p.waitForTimeout(1500); await snap('declined');
+await p.getByRole('button', { name: /Top up ₴100 with/ }).click();
+await p.waitForTimeout(1200); await snap('apple pay');
+await p.waitForTimeout(1800); await snap('ready');
+await p.getByRole('button', { name: 'Tap again' }).click();
+await p.waitForTimeout(1800); await snap('success');
+await p.getByRole('button', { name: 'Done' }).click();
+await p.getByRole('button', { name: 'Card' }).click();
+await p.waitForTimeout(600); await snap('card tab');
+await p.goto('http://localhost:5174/card/top-up?theme=dark'); await p.waitForTimeout(600); await snap('top up dark');
+await p.goto('http://localhost:5174/card/auto?lang=uk&theme=light'); await p.waitForTimeout(400);
+await p.locator('#phone').getByRole('switch').click(); await p.waitForTimeout(400); await snap('auto uk');
+const html = `<body style="margin:0;display:flex;flex-wrap:wrap;gap:6px;background:#888;font:12px sans-serif">${shots.map((s) => `<figure style="margin:0"><img src="data:image/png;base64,${s.b64}" width="300"><figcaption>${s.label}</figcaption></figure>`).join('')}</body>`;
+await p.setViewportSize({ width: 1236, height: 900 });
+await p.setContent(html);
+await p.screenshot({ path: out, fullPage: true });
+console.log(JSON.stringify(errors));
+await b.close();

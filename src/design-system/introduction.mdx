@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { CardGrid, DocCard, Lead } from './docs-blocks';
+
+<Meta title="Introduction" />
+
+# Eticket design system
+
+<Lead>
+  The building blocks of the Eticket 2026 redesign: Kharkiv's travel card in your phone. Two jobs matter most: pay with one
+  tap, and know when your transport arrives. This Storybook is the reference; the code it renders is the source of truth.
+</Lead>
+
+## What is here
+
+<CardGrid>
+  <DocCard title="Guidelines" href="?path=/docs/guidelines--docs">
+    One hero per job, the transport code, copy rules, and how to add a component.
+  </DocCard>
+  <DocCard title="Foundations" href="?path=/story/foundations-tokens--colors">
+    Colors with live contrast, transport code, iOS type scale, formats, shape and motion. Read straight from `tokens.js`.
+  </DocCard>
+  <DocCard title="Components" href="?path=/docs/components-line-badge--docs">
+    Every component with live examples, variants and states, in light and dark, English and Ukrainian.
+  </DocCard>
+</CardGrid>
+
+## Where things live
+
+| What | File |
+| --- | --- |
+| Tokens (single source) | `src/design-system/tokens.js` |
+| Utility classes built from tokens | `tailwind.config.js` |
+| Components, one per file, props only | `src/components/*.tsx` |
+| Stories next to each component | `src/components/*.stories.tsx` |
+| Strings | `src/i18n/en.ts`, `src/i18n/uk.ts` |
+
+## Principles
+
+- **One hero per job.** The card for paying, the live arrival chip for waiting. Everything else is calm.
+- **Tokens only.** No raw hex, radius or font size in components. Missing a value? Add a token.
+- **Two themes, two languages.** Switch both from the toolbar. Ukrainian must fit without overflow.
+- **Transport is never color alone.** Icon or M, number, color: always together.
+- **Props in, events out.** Components never read the app store, so they render here exactly as in the app.

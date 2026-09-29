@@ -1,0 +1,67 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { DoDont, DoDontRow, Lead } from './docs-blocks';
+import { LineBadge } from '../components/LineBadge';
+import { Button } from '../components/Button';
+
+<Meta title="Guidelines" />
+
+# Guidelines
+
+<Lead>How the pieces are meant to be used. Apple HIG as the platform, the transport code as the brand.</Lead>
+
+## One hero per job
+
+A screen has one loud element. On Card and at the turnstile it is the Eticket card: balance, trips left, tap state. At a stop
+it is the live arrival chip: "Tram 27 · 3 min". Lists, headers and settings stay quiet: surface on canvas, no shadows.
+
+## Transport code
+
+<DoDontRow>
+  <DoDont tone="do" title="Icon, number and color together. Reads in grayscale.">
+    <span className="flex gap-2">
+      <LineBadge transport="tram" number="27" />
+      <LineBadge transport="metro" number={2} />
+      <LineBadge transport="bus" number="115" />
+    </span>
+  </DoDont>
+  <DoDont tone="dont" title="A colored dot or colored text as the only signal.">
+    <span className="flex items-center gap-2 text-headline">
+      <span className="size-3 rounded-chip bg-tram" />
+      <span className="text-tram">27</span>
+    </span>
+  </DoDont>
+</DoDontRow>
+
+## Actions
+
+<DoDontRow>
+  <DoDont tone="do" title="One filled button per screen. The label says what happens and how much.">
+    <Button>Top up ₴100</Button>
+  </DoDont>
+  <DoDont tone="dont" title="Vague labels, or two filled buttons competing.">
+    <span className="flex gap-2">
+      <Button size="md">OK</Button>
+      <Button size="md">Submit</Button>
+    </span>
+  </DoDont>
+</DoDontRow>
+
+## Copy
+
+- Sentence case, plain words, English and Ukrainian.
+- Money and arrivals first: "Tram 27 · 3 min", "₴4 left".
+- Buttons say what happens: "Top up ₴100", "Notify me", "Block card".
+- Errors say what happened and what to do. No apologies.
+
+## Platform
+
+- Large titles on tab roots, collapsing into a compact bar on scroll.
+- Labeled tab bar with four tabs: Home, Routes, Card, Profile. No floating glass.
+- Sheets with a grabber and detents for short tasks: station, stop, top-up.
+- Inset grouped lists in Profile. Segmented controls for two or three views. 44 pt touch targets.
+
+## Adding a component
+
+1. Props in, events out. No store access.
+2. Tokens only. If you need a value, add it to `tokens.js` with a `use` note.
+3. A stories file next to it: every variant and state, checked in light, dark and Ukrainian.
