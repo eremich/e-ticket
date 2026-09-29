@@ -24,7 +24,7 @@ const MetroButton = () => {
     <button
       type="button"
       onClick={() => navigate('/metro')}
-      className="press -mr-1 flex h-9 items-center gap-1.5 rounded-chip bg-action-soft px-3 text-subheadline font-semibold text-action"
+      className="press -mr-1 flex h-10 items-center gap-1.5 rounded-chip bg-surface px-3.5 text-subheadline font-semibold text-ink shadow-[0_1px_2px_rgb(0_0_0/0.06)]"
     >
       <Subway aria-hidden weight="fill" className="size-4" />
       {t('transport.metro')}
@@ -37,7 +37,7 @@ const SearchField = () => {
   const t = useT();
   const navigate = useNavigate();
   return (
-    <button type="button" onClick={() => navigate('/routes')} className="flex h-11 w-full items-center gap-2 rounded-control bg-raised px-3 text-left text-body text-muted">
+    <button type="button" onClick={() => navigate('/routes')} className="flex h-12 w-full items-center gap-2 rounded-chip bg-surface px-4 text-left text-body text-muted shadow-[0_1px_2px_rgb(0_0_0/0.06)]">
       <MagnifyingGlass aria-hidden weight="bold" className="size-5" />
       {t('home.whereTo')}
     </button>
@@ -56,7 +56,7 @@ const Onward = () => {
   const stop = stopById(exit);
   return (
     <section className="px-4">
-      <h2 className="px-4 pb-1.5 text-footnote uppercase text-muted">
+      <h2 className="section-title pb-2">
         {t('live.onward')} · {name(stationById(arrivedAt).name)}
       </h2>
       <div className="rounded-group bg-surface">
@@ -103,7 +103,7 @@ const ListView = ({ onStation }: { onStation: (id: string) => void }) => {
     <div className="screen-enter flex flex-col gap-6">
       <Onward />
       <section className="px-4">
-        <h2 className="px-4 pb-1.5 text-footnote uppercase text-muted">{t('home.nearestStation')}</h2>
+        <h2 className="section-title pb-2">{t('home.nearestStation')}</h2>
         <NearestStation
           name={name(station.name)}
           line={station.line}
@@ -115,7 +115,7 @@ const ListView = ({ onStation }: { onStation: (id: string) => void }) => {
         />
       </section>
       <section className="px-4">
-        <h2 className="px-4 pb-1.5 text-footnote uppercase text-muted">{t('home.nearbyStops')}</h2>
+        <h2 className="section-title pb-2">{t('home.nearbyStops')}</h2>
         <div className="divide-y divide-line rounded-group bg-surface">
           {stops.map((stop) => (
             <StopRow

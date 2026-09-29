@@ -54,7 +54,7 @@ export const StopDetail = () => {
       </NavBar>
 
       <section className="flex flex-col gap-3 px-4">
-        <h2 className="px-4 text-footnote uppercase text-muted">{t('stop.lines')}</h2>
+        <h2 className="section-title">{t('stop.lines')}</h2>
         {stop.services.map((sv) => {
           const r = routeById(sv.routeId);
           const times = stopArrivals(stop, r.id);

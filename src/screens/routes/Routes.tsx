@@ -119,7 +119,7 @@ export const Routes = () => {
   };
 
   const filterChip = (key: 'fewer' | 'lessWalk' | 'stepFree', text: string, icon?: JSX.Element) => (
-    <Chip key={key} label={text} icon={icon} selected={filters[key]} onClick={() => setFilters({ [key]: !filters[key], ...(key === 'fewer' ? { lessWalk: false } : key === 'lessWalk' ? { fewer: false } : {}) })} />
+    <Chip key={key} label={text} icon={icon} variant="toggle" selected={filters[key]} onClick={() => setFilters({ [key]: !filters[key], ...(key === 'fewer' ? { lessWalk: false } : key === 'lessWalk' ? { fewer: false } : {}) })} />
   );
 
   return (
@@ -167,7 +167,8 @@ export const Routes = () => {
                 <Chip
                   key={tr}
                   label={t(`transport.${tr}`)}
-                  icon={<Icon aria-hidden weight="fill" className="size-4" />}
+                  icon={<Icon aria-hidden weight="regular" className="size-4" />}
+                  variant="toggle"
                   selected={on}
                   onClick={() => setFilters({ transports: on ? filters.transports.filter((x) => x !== tr) : [...filters.transports, tr] })}
                 />
@@ -180,7 +181,7 @@ export const Routes = () => {
             {filterChip('stepFree', t('route.stepFree'), <Wheelchair aria-hidden weight="bold" className="size-4" />)}
           </div>
           <section className="flex flex-col gap-3 px-4 pt-2">
-            <h2 className="px-4 text-footnote uppercase text-muted">{t('routes.options')}</h2>
+            <h2 className="section-title">{t('routes.options')}</h2>
             {options.length === 0 && <p className="px-4 text-body text-muted">{t('routes.none')}</p>}
             {options.map((o, i) => (
               <div key={o.id} className="flex flex-col gap-1.5">

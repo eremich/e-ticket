@@ -14,18 +14,13 @@ export interface LineBadgeProps {
   decorative?: boolean;
 }
 
-const FILL: Record<Transport, string> = {
-  metro: 'bg-metro-badge text-on-transport',
-  tram: 'bg-tram-badge text-on-transport',
-  trolleybus: 'bg-trolleybus-badge text-on-transport',
-  bus: 'bg-bus-badge text-on-bus',
-};
-
-const METRO_FILL: Record<MetroLine, string> = { 1: 'bg-m1', 2: 'bg-m2', 3: 'bg-m3' };
+/** Text-safe shade of each transport color: the badge is just colored icon and number, no plate */
+const INK: Record<Transport, string> = { metro: 'text-metro-ink', tram: 'text-tram-ink', trolleybus: 'text-trolleybus-ink', bus: 'text-bus-ink' };
+const METRO_INK: Record<MetroLine, string> = { 1: 'text-m1-ink', 2: 'text-m2-ink', 3: 'text-m3-ink' };
 
 /**
- * Transport identity: color + icon + number, always together.
- * Metro lines use their own line color (1 red, 2 blue, 3 green) with the "M" mark.
+ * Transport identity: color + icon + number, always together, and nothing else — no plate behind it.
+ * Metro lines use their line color (1 red, 2 blue, 3 green) with the "M" mark.
  */
 export const LineBadge = ({ transport, number, size = 'md', label, decorative = false }: LineBadgeProps) => {
   const Icon = TRANSPORT_ICON[transport];
@@ -37,30 +32,30 @@ export const LineBadge = ({ transport, number, size = 'md', label, decorative = 
       aria-hidden={decorative || undefined}
       aria-label={decorative ? undefined : (label ?? `${transport} ${number}`)}
       className={cx(
-        'tnum inline-flex shrink-0 items-center rounded-badge font-bold leading-none',
-        size === 'md' ? 'h-7 gap-1 pl-1.5 pr-2 text-subheadline font-bold' : 'h-[22px] gap-0.5 pl-1 pr-1.5 text-footnote font-bold',
-        isMetro ? cx(METRO_FILL[line] ?? 'bg-metro-badge', 'text-on-transport') : FILL[transport],
+        'tnum inline-flex shrink-0 items-center font-semibold leading-none',
+        size === 'md' ? 'h-7 gap-1 text-headline' : 'h-[22px] gap-0.5 text-subheadline',
+        isMetro ? (METRO_INK[line] ?? INK.metro) : INK[transport],
       )}
     >
       {isMetro ? (
-        <span aria-hidden className={cx('font-bold', size === 'md' ? 'text-subheadline' : 'text-footnote')}>
+        <span aria-hidden className={cx('font-semibold', size === 'md' ? 'text-subheadline' : 'text-footnote')}>
           M
         </span>
       ) : (
-        <Icon aria-hidden className={size === 'md' ? 'size-4' : 'size-3.5'} weight="fill" />
+        <Icon aria-hidden className={size === 'md' ? 'size-4' : 'size-3.5'} weight="bold" />
       )}
       <span aria-hidden>{number}</span>
     </span>
   );
 };
 
-/** Icon-only transport tile for list rows (stop type) */
+/** Icon-only transport mark for list rows: the icon in the transport color, no tile behind it */
 export const TransportTile = ({ transport, line }: { transport: Transport; line?: MetroLine }) => {
   const Icon = TRANSPORT_ICON[transport];
-  const fill = transport === 'metro' && line ? cx(METRO_FILL[line], 'text-on-transport') : FILL[transport];
+  const ink = transport === 'metro' && line ? METRO_INK[line] : INK[transport];
   return (
-    <span aria-hidden className={cx('flex size-9 shrink-0 items-center justify-center rounded-inner', fill)}>
-      <Icon className="size-5" weight="fill" />
+    <span aria-hidden className={cx('flex size-7 shrink-0 items-center justify-center', ink)}>
+      <Icon className="size-6" weight="regular" />
     </span>
   );
 };

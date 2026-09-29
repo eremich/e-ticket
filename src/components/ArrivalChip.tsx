@@ -36,8 +36,8 @@ export const ArrivalChip = ({ transport, number, minutes, scheduled, towards, de
       type={onClick ? 'button' : undefined}
       onClick={onClick}
       className={cx(
-        'inline-flex h-11 shrink-0 items-center gap-2 rounded-chip bg-surface pl-1.5 pr-3.5 ring-1 ring-inset ring-line',
-        onClick && 'press transition-colors duration-150 hover:ring-muted/50',
+        'inline-flex h-10 shrink-0 items-center gap-2 rounded-chip bg-raised px-3.5',
+        onClick && 'press transition-colors duration-150 hover:bg-line',
       )}
     >
       {/* One spoken label; the visual parts are hidden from screen readers */}

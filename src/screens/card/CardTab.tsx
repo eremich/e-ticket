@@ -16,7 +16,7 @@ import { AddCardSheet } from './AddCardSheet';
 /** Round quick action under the card, like Wallet's */
 const Action = ({ icon, label, onClick, primary }: { icon: React.ReactNode; label: string; onClick: () => void; primary?: boolean }) => (
   <button type="button" onClick={onClick} className="press flex flex-1 flex-col items-center gap-1.5">
-    <span className={cx('flex size-13 items-center justify-center rounded-chip [&>svg]:size-6', primary ? 'bg-action text-on-action' : 'bg-surface text-action')}>{icon}</span>
+    <span className={cx('flex size-13 items-center justify-center rounded-chip [&>svg]:size-6', primary ? 'bg-accent text-on-accent' : 'bg-surface text-ink')}>{icon}</span>
     <span className="text-center text-footnote text-ink">{label}</span>
   </button>
 );
@@ -80,7 +80,7 @@ export const CardTab = () => {
         {recent.length > 0 && (
           <section className="px-4">
             <div className="flex items-baseline justify-between px-4 pb-1.5">
-              <h2 className="text-footnote uppercase text-muted">{t('cardTab.recent')}</h2>
+              <h2 className="section-title px-0">{t('cardTab.recent')}</h2>
               <button type="button" onClick={() => navigate('/profile/trips')} className="text-subheadline text-action">
                 {t('cardTab.seeAll')}
               </button>

@@ -11,7 +11,7 @@ export interface BannerProps {
 }
 
 const TONES: Record<BannerProps['tone'], { cls: string; icon: Icon; ink: string }> = {
-  info: { cls: 'bg-action-soft', icon: Info, ink: 'text-action' },
+  info: { cls: 'bg-raised', icon: Info, ink: 'text-action' },
   warn: { cls: 'bg-warn/15', icon: Warning, ink: 'text-warn-ink' },
   error: { cls: 'bg-error/10', icon: XCircle, ink: 'text-error' },
   offline: { cls: 'bg-raised', icon: CloudSlash, ink: 'text-ink' },

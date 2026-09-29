@@ -32,7 +32,7 @@ export const VisitorTicketScreen = () => {
           </div>
         ) : (
           <div className="flex items-start gap-3">
-            <span className="flex size-9 shrink-0 items-center justify-center rounded-chip bg-action-soft text-action">
+            <span className="flex size-9 shrink-0 items-center justify-center rounded-chip bg-raised text-ink">
               <ContactlessPayment aria-hidden weight="bold" className="size-5" />
             </span>
             <div className="flex flex-col gap-0.5">

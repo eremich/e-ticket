@@ -186,8 +186,8 @@ export const MetroMap = ({ current, selected, path, train, onSelect }: MetroMapP
         const s = stationById(train);
         return (
           <g aria-hidden className="transition-transform duration-500 ease-out" style={{ transform: `translate(${s.x}px, ${s.y}px)` }}>
-            <circle r="10" className="fill-action stroke-surface" strokeWidth="3" />
-            <path d="M-4 -3h8v5h-8zM-3 4l-1.5 2M3 4l1.5 2" className="stroke-on-action" strokeWidth="1.6" fill="none" strokeLinecap="round" />
+            <circle r="10" className="fill-accent stroke-surface" strokeWidth="3" />
+            <path d="M-4 -3h8v5h-8zM-3 4l-1.5 2M3 4l1.5 2" className="stroke-on-accent" strokeWidth="1.6" fill="none" strokeLinecap="round" />
           </g>
         );
       })()}

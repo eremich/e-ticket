@@ -15,10 +15,10 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const VARIANTS: Record<Variant, string> = {
-  filled: 'bg-action text-on-action hover:bg-action/90 disabled:bg-raised disabled:text-muted',
-  tinted: 'bg-action-soft text-action hover:bg-action-soft/70 disabled:text-muted',
+  filled: 'bg-accent text-on-accent hover:bg-accent/90 disabled:bg-raised disabled:text-muted',
+  tinted: 'bg-raised text-action hover:bg-line disabled:text-muted',
   gray: 'bg-raised text-ink hover:bg-line disabled:text-muted',
-  plain: 'bg-transparent text-action hover:bg-action-soft disabled:text-muted',
+  plain: 'bg-transparent text-action hover:bg-raised disabled:text-muted',
   destructive: 'bg-raised text-error hover:bg-error/10 disabled:text-muted',
 };
 
@@ -39,7 +39,7 @@ export const Button = ({
     disabled={disabled || loading}
     aria-busy={loading || undefined}
     className={cx(
-      'press inline-flex items-center justify-center gap-2 rounded-control text-headline transition-colors duration-150 disabled:cursor-not-allowed',
+      'press inline-flex items-center justify-center gap-2 rounded-chip text-headline transition-colors duration-150 disabled:cursor-not-allowed',
       size === 'lg' ? 'min-h-13 px-5' : 'min-h-11 px-4',
       block && 'w-full',
       VARIANTS[variant],

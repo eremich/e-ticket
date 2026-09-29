@@ -9,7 +9,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'The hero of waiting: "Tram 27 · 3 min". Live minutes are bold with a calm pulsing dot; "Now" turns green; a delay turns amber and says so; without live data the chip shows the timetable time, muted and labelled "Scheduled". Metro chips name the direction instead of the route.',
+          'The hero of waiting: "Tram 27 · 3 min". One gray pill shows it can be pressed; the line badge inside has no plate of its own. Live minutes are bold with a calm pulsing dot; "Now" turns green; a delay turns yellow and says so; without live data the chip shows the timetable time, muted and labelled "Scheduled". Metro chips name the direction instead of the route.',
       },
     },
   },

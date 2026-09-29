@@ -90,7 +90,7 @@ export const PaySheet = ({ open, amount, merchant, faceIdOnly = false, title, on
           </span>
         </div>
         {/* Side button hint: a bar at the right edge, as iOS shows it */}
-        {step === 'confirm' && !faceIdOnly && <span aria-hidden className="absolute -right-0.5 top-10 h-16 w-1.5 animate-pulse rounded-l-chip bg-action" />}
+        {step === 'confirm' && !faceIdOnly && <span aria-hidden className="absolute -right-0.5 top-10 h-16 w-1.5 animate-pulse rounded-l-chip bg-accent" />}
       </div>
     </div>,
     target,

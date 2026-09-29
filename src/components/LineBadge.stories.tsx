@@ -10,7 +10,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Transport identity: color, icon and number, always together, so a route reads in grayscale. Metro uses the line color (1 red, 2 blue, 3 green) with the M mark. TransportTile is the icon-only square for stop rows.',
+          'Transport identity: color, icon and number, always together, and no plate behind them, so a route reads in grayscale and stays light inside chips and rows. Metro uses the line color (1 red, 2 blue, 3 green) with the M mark. TransportTile is the plain colored icon for stop rows.',
       },
     },
   },

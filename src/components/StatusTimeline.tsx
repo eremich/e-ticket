@@ -17,10 +17,10 @@ export interface StatusTimelineProps {
 }
 
 const DOT: Record<TimelineStep['state'], string> = {
-  done: 'bg-ok text-on-action',
+  done: 'bg-ok text-on-status',
   current: 'bg-surface text-action ring-[3px] ring-inset ring-action',
   upcoming: 'bg-surface ring-2 ring-inset ring-line',
-  error: 'bg-error text-on-action',
+  error: 'bg-error text-on-status',
 };
 
 /** Vertical progress of a request or renewal: what happened, what is happening, what comes next */
@@ -37,7 +37,7 @@ export const StatusTimeline = ({ steps, label }: StatusTimelineProps) => (
           <span aria-hidden className={cx('relative z-10 mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-chip', DOT[s.state])}>
             {s.state === 'done' && <Check weight="bold" className="size-3.5" />}
             {s.state === 'error' && <X weight="bold" className="size-3.5" />}
-            {s.state === 'current' && <span className="size-2 rounded-chip bg-action" />}
+            {s.state === 'current' && <span className="size-2 rounded-chip bg-accent" />}
           </span>
           <div className="min-w-0 flex-1">
             <div className="flex items-baseline justify-between gap-3">

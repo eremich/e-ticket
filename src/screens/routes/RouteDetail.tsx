@@ -117,7 +117,7 @@ export const RouteDetail = () => {
           </RouteSteps>
         </div>
       </div>
-      <div className="sticky bottom-0 border-t border-line bg-canvas/95 px-4 pb-4 pt-3 backdrop-blur">
+      <div className="sticky bottom-0 z-10 border-t border-line bg-canvas/95 px-4 pb-4 pt-3 backdrop-blur">
         <Button
           block
           icon={<NavigationArrow aria-hidden weight="fill" className="size-5" />}

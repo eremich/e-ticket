@@ -37,7 +37,7 @@ export const Location = () => {
           {[0, 1].map((i) => (
             <span key={i} aria-hidden className="ring-out absolute size-32 rounded-full border-2 border-action" style={{ animationDelay: `${i * 0.9}s` }} />
           ))}
-          <span aria-hidden className="absolute size-32 rounded-full bg-action-soft" />
+          <span aria-hidden className="absolute size-32 rounded-full bg-raised" />
           <MapPin aria-hidden weight="fill" className="relative size-16 text-action" />
         </div>
         <div className="flex flex-col gap-2">

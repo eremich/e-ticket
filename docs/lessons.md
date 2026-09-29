@@ -28,3 +28,8 @@ _No lessons yet. When you correct Claude, it will record the pattern here to avo
 - **What happened**: The metro map rendered all black in Storybook: `fill-*` / `stroke-*` classes were missing, although a fresh Tailwind build had them.
 - **Why**: The running Storybook kept stale Tailwind output after tokens.js / first use of new utility families.
 - **Rule**: When tokens.js changes or a new utility family appears, restart the Storybook (and dev) server before judging visuals.
+
+### [2026-09-29] Dark theme: black, not the brief's blue-grey
+- **What happened**: I used the brief's dark values (#0D141B canvas, #16202A surface). On Vercel the user found the dark theme too blue and asked for more black.
+- **Why**: I treated the brief's dark palette as final, although the same lesson was learned on Patronim (neutral graphite, not tinted).
+- **Rule**: Dark neutrals are always true black + iOS graphite (#000 / #1C1C1E / #2C2C2E / #38383A), even when a brief gives tinted values. Keep hue only on actions, selection and transport colors. Show the dark palette to the user before building screens on it.

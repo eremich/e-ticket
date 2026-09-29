@@ -40,7 +40,7 @@ export const TripRow = ({ kind, transport, number, place, time, amount, method, 
   const leading =
     (kind === 'ride' || kind === 'transfer') && transport ? (
       kind === 'transfer' ? (
-        <span className={cx(ICON_TILE, 'bg-action-soft text-action')}>
+        <span className={cx(ICON_TILE, 'bg-raised text-action')}>
           <ArrowsLeftRight weight="bold" className="size-5" />
         </span>
       ) : (

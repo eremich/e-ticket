@@ -7,12 +7,20 @@ import { Button } from '../components/Button';
 
 # Guidelines
 
-<Lead>How the pieces are meant to be used. Apple HIG as the platform, the transport code as the brand.</Lead>
+<Lead>How the pieces are meant to be used. Apple HIG as the platform, a near-monochrome interface, one blue accent, and the transport code as the only other color.</Lead>
 
 ## One hero per job
 
 A screen has one loud element. On Card and at the turnstile it is the Eticket card: balance, trips left, tap state. At a stop
 it is the live arrival chip: "Tram 27 · 3 min". Lists, headers and settings stay quiet: surface on canvas, no shadows.
+
+## Color and surfaces
+
+- Near black and white: canvas `#F5F5F5` / black, white / graphite cards, ink text. Dark theme is true black, never blue-grey.
+- One accent, `accent`: the primary button, a single selected choice and the active tab. Blue text and icons use `action`.
+- One plate per interactive element. A chip that can be pressed has a gray pill; nothing inside it has its own plate.
+- Independent filters (transport types, step-free) are white pills with a check, so several on at once stay calm.
+- Status colors mean something: green on time or paid, yellow low balance, red declined. Dark theme uses the vivid iOS system colors.
 
 ## Transport code
 
@@ -56,9 +64,10 @@ it is the live arrival chip: "Tram 27 · 3 min". Lists, headers and settings sta
 ## Platform
 
 - Large titles on tab roots, collapsing into a compact bar on scroll.
-- Labeled tab bar with four tabs: Home, Routes, Card, Profile. No floating glass.
+- Floating glass tab bar (iOS 26) with four labeled tabs: Home, Routes, Card, Profile. Glass only here, never on content.
 - Sheets with a grabber and detents for short tasks: station, stop, top-up.
-- Inset grouped lists in Profile. Segmented controls for two or three views. 44 pt touch targets.
+- Inset grouped lists as in iOS Settings: 44 pt rows, 17 pt titles and values, 15 pt subtitles, 29 pt icons, separators from the text, 13 pt regular section headers. Choices open a list with a checkmark.
+- Segmented controls for two or three views of the same content. 44 pt touch targets. Type follows the iOS text styles in Onest (Cyrillic included).
 
 ## Adding a component
 

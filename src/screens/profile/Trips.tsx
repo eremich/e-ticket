@@ -50,7 +50,7 @@ export const Trips = () => {
       </NavBar>
 
       <section className="px-4">
-        <h2 className="px-4 pb-1.5 text-footnote uppercase text-muted">{t('trips.summaryHeader')}</h2>
+        <h2 className="section-title pb-2">{t('trips.summaryHeader')}</h2>
         <div className="flex flex-col gap-4 rounded-group bg-surface p-4">
           <div className="flex flex-col">
             <span className="tnum text-large-title text-ink">{m(stats.spent)}</span>

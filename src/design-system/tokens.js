@@ -9,49 +9,60 @@
  * Semantic colors. Names stay the same in both themes, so components never branch on light or dark.
  * Base values come from the brief. Where a brief color fails AA as text or under text,
  * a companion token carries the accessible value (`action`, `*-badge`, `on-*`, `*-ink`).
+ * Dark neutrals are true black and graphite (iOS system colors), not the brief's blue-grey: the user found it too blue.
+ * Dark status and transport colors are the vivid iOS dark system colors (green #30D158, red #FF453A, yellow #FFD60A, blue #0A84FF).
  */
 export const color = {
-  ink: { light: '#12202E', dark: '#EEF3F8', use: 'Primary text' },
-  muted: { light: '#5A6878', dark: '#9AA8B8', use: 'Secondary text, scheduled (not live) times. AA on surface and canvas' },
-  canvas: { light: '#F3F7FB', dark: '#0D141B', use: 'App background' },
-  surface: { light: '#FFFFFF', dark: '#16202A', use: 'Cards, sheets, grouped lists' },
-  raised: { light: '#E9EFF5', dark: '#202C38', use: 'Segmented track, pressed rows, skeletons' },
-  line: { light: '#DCE5EE', dark: '#27333F', use: 'Dividers, borders' },
+  ink: { light: '#121212', dark: '#F2F2F4', use: 'Primary text' },
+  muted: { light: '#6B6B6B', dark: '#9D9DA4', use: 'Secondary text, scheduled (not live) times. AA on surface and canvas' },
+  canvas: { light: '#F5F5F5', dark: '#000000', use: 'App background. Dark: true black, like iOS' },
+  surface: { light: '#FFFFFF', dark: '#1C1C1E', use: 'Cards, sheets, grouped lists' },
+  raised: { light: '#EBEBEB', dark: '#2C2C2E', use: 'Segmented track, pressed rows, skeletons' },
+  line: { light: '#E3E3E3', dark: '#38383A', use: 'Dividers, borders' },
 
-  brand: { light: '#1487D6', dark: '#3AA3EC', use: 'Eticket brand: logo, card, icons, selection. Not for text on white (3.8:1)' },
-  action: { light: '#0B6FB8', dark: '#3AA3EC', use: 'Primary buttons, links, active tab. Brand deepened to 5.3:1 in light' },
-  'on-action': { light: '#FFFFFF', dark: '#0D141B', use: 'Text and icons on action fills' },
-  'action-soft': { light: '#E3F0FA', dark: '#16324A', use: 'Selected chips, brand tint surfaces' },
+  brand: { light: '#006AFF', dark: '#1A6BFF', use: 'Eticket brand: the card face and brand marks' },
+  action: { light: '#0062EB', dark: '#5A96FF', use: 'Blue text, links, icons and focus rings. AA on surface and canvas' },
+  accent: { light: '#0062EB', dark: '#1A6BFF', use: 'The one accent fill: primary button, selected chip, active tab. White text on it' },
+  'on-accent': { light: '#FFFFFF', dark: '#FFFFFF', use: 'Text and icons on accent fills' },
+  'on-status': { light: '#FFFFFF', dark: '#000000', use: 'Icons on ok, warn and error fills' },
+  'action-soft': { light: '#E6F0FF', dark: '#0E2440', use: 'Rare brand tint: the current step of a live trip' },
 
-  metro: { light: '#1E7FD0', dark: '#4AA0E8', use: 'Metro: icons, map strokes, markers' },
-  tram: { light: '#E0483F', dark: '#F0716A', use: 'Tram: icons, map strokes, markers' },
-  trolleybus: { light: '#1F9D4C', dark: '#46C274', use: 'Trolleybus: icons, map strokes, markers' },
-  bus: { light: '#E8A300', dark: '#F2BE3C', use: 'Bus: icons, map strokes, markers. Always with a dark icon or number on top' },
-  'metro-badge': { light: '#1A6FB5', dark: '#4AA0E8', use: 'Metro line number badge fill' },
-  'tram-badge': { light: '#C0342E', dark: '#F0716A', use: 'Tram number badge fill' },
-  'trolleybus-badge': { light: '#15803D', dark: '#46C274', use: 'Trolleybus number badge fill' },
-  'bus-badge': { light: '#E8A300', dark: '#F2BE3C', use: 'Bus number badge fill' },
-  'on-transport': { light: '#FFFFFF', dark: '#0D141B', use: 'Numbers on metro, tram and trolleybus badges' },
-  'on-bus': { light: '#12202E', dark: '#0D141B', use: 'Numbers on bus badges (yellow needs dark text in both themes)' },
+  metro: { light: '#1E7FD0', dark: '#0A84FF', use: 'Metro: icons, map strokes, markers' },
+  tram: { light: '#E0483F', dark: '#FF453A', use: 'Tram: icons, map strokes, markers' },
+  trolleybus: { light: '#1F9D4C', dark: '#30D158', use: 'Trolleybus: icons, map strokes, markers' },
+  bus: { light: '#E8A300', dark: '#FFD60A', use: 'Bus: icons, map strokes, markers. Always with a dark icon or number on top' },
+  'metro-badge': { light: '#1A6FB5', dark: '#409CFF', use: 'Metro line number badge fill' },
+  'tram-badge': { light: '#C0342E', dark: '#FF6961', use: 'Tram number badge fill' },
+  'trolleybus-badge': { light: '#15803D', dark: '#30D158', use: 'Trolleybus number badge fill' },
+  'bus-badge': { light: '#E8A300', dark: '#FFD60A', use: 'Bus number badge fill' },
+  'metro-ink': { light: '#135C9E', dark: '#64B5FF', use: 'Metro number and icon on its light tint. AA inside gray chips too' },
+  'tram-ink': { light: '#A82C26', dark: '#FF7B73', use: 'Tram number and icon on its light tint' },
+  'trolleybus-ink': { light: '#116A33', dark: '#30D158', use: 'Trolleybus number and icon on its light tint' },
+  'bus-ink': { light: '#7A5700', dark: '#FFD60A', use: 'Bus number and icon on its light tint (yellow text fails on white)' },
+  'm1-ink': { light: '#A5271F', dark: '#FF7B73', use: 'Line 1 text on its tint' },
+  'm2-ink': { light: '#11549A', dark: '#64B5FF', use: 'Line 2 text on its tint' },
+  'm3-ink': { light: '#116A35', dark: '#30D158', use: 'Line 3 text on its tint' },
+  'on-transport': { light: '#FFFFFF', dark: '#000000', use: 'Numbers on metro, tram and trolleybus badges' },
+  'on-bus': { light: '#12202E', dark: '#000000', use: 'Numbers on bus badges (yellow needs dark text in both themes)' },
 
-  m1: { light: '#C8322B', dark: '#F0716A', use: 'Metro line 1 Kholodnohirsko-Zavodska (red). Always with "1"' },
-  m2: { light: '#1565B8', dark: '#4AA0E8', use: 'Metro line 2 Saltivska (blue). Always with "2"' },
-  m3: { light: '#178041', dark: '#46C274', use: 'Metro line 3 Oleksiivska (green). Always with "3"' },
+  m1: { light: '#C8322B', dark: '#FF453A', use: 'Metro line 1 Kholodnohirsko-Zavodska (red). Always with "1"' },
+  m2: { light: '#1565B8', dark: '#0A84FF', use: 'Metro line 2 Saltivska (blue). Always with "2"' },
+  m3: { light: '#178041', dark: '#30D158', use: 'Metro line 3 Oleksiivska (green). Always with "3"' },
 
-  ok: { light: '#1F8A4C', dark: '#3CC37A', use: 'Success: icons, fills' },
-  'ok-ink': { light: '#177A43', dark: '#3CC37A', use: 'Success text. Light ok is 4.4:1, just under AA' },
-  warn: { light: '#B97800', dark: '#E7A33A', use: 'Low balance, delays: icons, fills' },
-  'warn-ink': { light: '#8A6200', dark: '#E7A33A', use: 'Warning text. Light warn is 3.7:1' },
-  error: { light: '#C8363B', dark: '#EF6A6E', use: 'Declined, errors: text, icons' },
+  ok: { light: '#1F8A4C', dark: '#30D158', use: 'Success: icons, fills' },
+  'ok-ink': { light: '#177A43', dark: '#30D158', use: 'Success text. Light ok is 4.4:1, just under AA' },
+  warn: { light: '#B97800', dark: '#FFD60A', use: 'Low balance, delays: icons, fills' },
+  'warn-ink': { light: '#8A6200', dark: '#FFD60A', use: 'Warning text. Light warn is 3.7:1' },
+  error: { light: '#C8363B', dark: '#FF453A', use: 'Declined, errors: text, icons' },
 
-  'map-land': { light: '#E8EEF4', dark: '#111A22', use: 'City map: ground' },
-  'map-block': { light: '#DBE3EB', dark: '#18232E', use: 'City map: building blocks' },
-  'map-road': { light: '#FFFFFF', dark: '#253241', use: 'City map: streets' },
-  'map-park': { light: '#D3E7D5', dark: '#15291F', use: 'City map: parks' },
-  'map-water': { light: '#C5DCF0', dark: '#0F2B40', use: 'City map: river' },
+  'map-land': { light: '#E8EEF4', dark: '#121214', use: 'City map: ground' },
+  'map-block': { light: '#DBE3EB', dark: '#1D1D20', use: 'City map: building blocks' },
+  'map-road': { light: '#FFFFFF', dark: '#2E2E32', use: 'City map: streets' },
+  'map-park': { light: '#D3E7D5', dark: '#14241A', use: 'City map: parks' },
+  'map-water': { light: '#C5DCF0', dark: '#0C2233', use: 'City map: river' },
 
   scrim: { light: '#0D141B', dark: '#000000', use: 'Backdrop behind sheets (used at 40%)' },
-  desk: { light: '#E2E9F0', dark: '#080C10', use: 'Desktop background around the phone frame. Not part of the app' },
+  desk: { light: '#E4E4E4', dark: '#0A0A0B', use: 'Desktop background around the phone frame. Not part of the app' },
 };
 
 /** Physical phone bezel in the desktop frame. Same in both themes */
@@ -59,15 +70,15 @@ export const bezel = '#0D141B';
 
 /** The Eticket card is a physical object; its face keeps the brand in both themes */
 export const card = {
-  face: { from: '#1487D6', to: '#0B5E9E', use: 'Main card gradient' },
-  virtual: { from: '#223447', to: '#0F1B27', use: 'Virtual card: same shape, graphite face' },
+  face: { from: '#006AFF', to: '#006AFF', use: 'Main card: flat brand blue, no gradient' },
+  virtual: { from: '#2E2E33', to: '#141416', use: 'Virtual card: same shape, graphite face' },
   text: '#FFFFFF',
 };
 
 export const themes = ['light', 'dark'];
 
 export const font = {
-  family: '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Roboto Variable", Roboto, sans-serif',
+  family: '"Onest Variable", -apple-system, BlinkMacSystemFont, sans-serif',
   weights: { normal: 400, semibold: 600, bold: 700 },
 };
 
@@ -87,11 +98,11 @@ export const type = {
 
 /** Radius by hierarchy */
 export const radius = {
-  sheet: { value: 14, use: 'Bottom sheets (top corners)' },
-  eticket: { value: 18, use: 'The Eticket card' },
-  group: { value: 12, use: 'Inset grouped lists, cards' },
-  control: { value: 12, use: 'Buttons, inputs' },
-  inner: { value: 8, use: 'Segment thumb, small tiles' },
+  sheet: { value: 28, use: 'Bottom sheets (top corners)' },
+  eticket: { value: 24, use: 'The Eticket card' },
+  group: { value: 22, use: 'Cards and grouped lists: soft, generous corners' },
+  control: { value: 16, use: 'Inputs and multi-line fields. Buttons are pills (chip)' },
+  inner: { value: 12, use: 'Segment thumb, small tiles' },
   badge: { value: 6, use: 'Line number badges' },
   chip: { value: 999, use: 'Chips, arrival pills' },
 };
@@ -108,7 +119,22 @@ export const space = {
 export const elevation = {
   sheet: { value: '0 -8px 32px rgba(13, 20, 27, 0.16)', use: 'Bottom sheets' },
   toast: { value: '0 8px 24px rgba(13, 20, 27, 0.24)', use: 'Toasts' },
-  object: { value: '0 12px 28px -8px rgba(11, 94, 158, 0.45)', use: 'The Eticket card only' },
+  floating: { value: '0 10px 30px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.08)', use: 'Floating glass tab bar' },
+  object: { value: '0 10px 24px -14px rgba(0, 0, 0, 0.35)', use: 'The Eticket card only: a soft neutral lift, no colored glow' },
+};
+
+/**
+ * Materials. Glass is reserved for system-level floating chrome (the tab bar), like iOS 26 Liquid Glass.
+ * Never on cards or content.
+ */
+export const material = {
+  glass: {
+    blur: 24,
+    saturate: 180,
+    light: { alpha: 0.72, edge: 'rgba(255, 255, 255, 0.65)' },
+    dark: { alpha: 0.62, edge: 'rgba(255, 255, 255, 0.09)' },
+    use: 'Floating tab bar only: surface at partial opacity, backdrop blur and saturation, light inner edge',
+  },
 };
 
 export const motion = {
@@ -118,6 +144,7 @@ export const motion = {
   sheet: { value: '320ms in / 200ms out', use: 'Sheet slide' },
   toast: { value: '240ms', use: 'Toast rise and fade' },
   skeleton: { value: '600ms', use: 'Simulated loading before live data appears' },
+  'tab-indicator': { value: '260ms ease-out', use: 'Selected tab capsule slides to the new tab' },
 };
 
 /** Transport code: color never alone, always icon + number */

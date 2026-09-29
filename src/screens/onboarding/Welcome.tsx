@@ -14,12 +14,6 @@ export const Welcome = () => {
   return (
     <div className="screen-enter flex flex-1 flex-col gap-4 px-4 pb-4">
       <section className="relative isolate flex flex-1 flex-col justify-end gap-3 overflow-hidden rounded-eticket bg-card-face p-6 text-white">
-        {/* NFC arcs echo the card face */}
-        <svg aria-hidden viewBox="0 0 200 200" className="absolute -right-24 -top-28 -z-10 size-96 text-white/[0.08]">
-          {[40, 64, 88, 112].map((r) => (
-            <circle key={r} cx="100" cy="100" r={r} fill="none" stroke="currentColor" strokeWidth="12" />
-          ))}
-        </svg>
         <EticketLogo className="text-balance" />
         <h1 className="text-large-title">{t('welcome.title')}</h1>
         <p className="text-body text-white/85">{t('welcome.body')}</p>

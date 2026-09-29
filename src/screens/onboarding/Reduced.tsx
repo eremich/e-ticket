@@ -77,7 +77,7 @@ export const Reduced = () => {
           </div>
         ) : (
           <>
-            <span aria-hidden className="flex size-24 items-center justify-center rounded-eticket bg-action-soft text-action">
+            <span aria-hidden className="flex size-24 items-center justify-center rounded-eticket bg-raised text-ink">
               <ImageSquare weight="regular" className="size-12" />
             </span>
             <h1 className="text-title2 text-ink">{t('reduced.upload', { doc })}</h1>

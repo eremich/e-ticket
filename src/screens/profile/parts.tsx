@@ -9,5 +9,5 @@ export const AlertPortal = (props: SystemAlertProps) => {
 
 /** Sticky bottom action area, same as onboarding's */
 export const Footer = ({ children }: { children: React.ReactNode }) => (
-  <div className="sticky bottom-0 mt-auto flex flex-col gap-2 border-t border-line bg-canvas/95 px-4 pb-4 pt-3 backdrop-blur">{children}</div>
+  <div className="sticky bottom-0 z-10 mt-auto flex flex-col gap-2 border-t border-line bg-canvas/95 px-4 pb-4 pt-3 backdrop-blur">{children}</div>
 );

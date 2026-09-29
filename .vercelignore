@@ -1,0 +1,7 @@
+# Not needed to build the site: original case images, screenshots, dev check output
+src/*.png
+src/*.gif
+src/*.mp4
+shots/
+scripts/.out/
+dist/

@@ -75,7 +75,7 @@ export const LineDetail = () => {
       )}
 
       <section className="mt-5 px-4">
-        <h2 className="px-4 pb-1.5 text-footnote uppercase text-muted">{t('line.stops')}</h2>
+        <h2 className="section-title pb-2">{t('line.stops')}</h2>
         <div className="rounded-group bg-surface py-3">
           <LineStopList
             transport={route.transport}

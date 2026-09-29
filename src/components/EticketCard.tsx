@@ -57,13 +57,6 @@ export const EticketCard = ({ name, number, balance, fare, kind = 'plastic', red
       )}
     >
       {/* Pills on the face are white in both themes, so they use light-theme ink (data-theme="light") */}
-      {/* Decorative: NFC arcs and a soft highlight give the face depth without noise */}
-      <svg aria-hidden viewBox="0 0 200 200" className="absolute -right-16 -top-20 -z-10 size-72 text-white/[0.07]">
-        {[40, 64, 88, 112].map((r) => (
-          <circle key={r} cx="100" cy="100" r={r} fill="none" stroke="currentColor" strokeWidth="12" />
-        ))}
-      </svg>
-      <div aria-hidden className="absolute inset-0 -z-10 bg-[radial-gradient(120%_80%_at_0%_0%,rgb(255_255_255/0.18),transparent_55%)]" />
 
       <div className="flex h-full flex-col">
         <header className="flex items-start justify-between gap-3">
@@ -141,7 +134,7 @@ export const CardStrip = ({ balance, fare, onOpen, onTopUp }: CardStripProps) =>
         </span>
       </button>
       {state !== 'ok' && onTopUp && (
-        <button type="button" onClick={onTopUp} className="press min-h-11 shrink-0 rounded-chip bg-action px-4 text-subheadline font-semibold text-on-action">
+        <button type="button" onClick={onTopUp} className="press min-h-11 shrink-0 rounded-chip bg-accent px-4 text-subheadline font-semibold text-on-accent">
           {t('card.topUp')}
         </button>
       )}

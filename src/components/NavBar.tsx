@@ -25,9 +25,10 @@ const scrollParent = (el: HTMLElement | null): HTMLElement | null => {
 };
 
 const BackButton = ({ onBack, label }: { onBack: () => void; label: string }) => (
-  <button type="button" onClick={onBack} className="press -ml-2 flex h-11 items-center pr-2 text-body text-action">
-    <CaretLeft aria-hidden className="size-6" weight="bold" />
-    <span className="-ml-0.5 max-w-24 truncate">{label}</span>
+  <button type="button" onClick={onBack} aria-label={label} className="press -ml-1.5 flex size-11 items-center justify-center">
+    <span className="flex size-10 items-center justify-center rounded-chip bg-surface text-ink shadow-[0_1px_2px_rgb(0_0_0/0.06)]">
+      <CaretLeft aria-hidden className="size-5" weight="bold" />
+    </span>
   </button>
 );
 

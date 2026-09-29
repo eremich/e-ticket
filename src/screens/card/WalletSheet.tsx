@@ -42,7 +42,7 @@ export const WalletSheet = ({ open, onClose, onAdded }: { open: boolean; onClose
         <ul className="flex flex-col gap-3">
           {WALLET_POINTS.map(({ icon: Icon, key }) => (
             <li key={key} className="flex items-center gap-3 text-body text-ink">
-              <span className="flex size-9 items-center justify-center rounded-chip bg-action-soft text-action">
+              <span className="flex size-9 items-center justify-center rounded-chip bg-raised text-ink">
                 <Icon aria-hidden weight="bold" className="size-5" />
               </span>
               {t(key)}

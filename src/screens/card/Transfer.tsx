@@ -84,14 +84,14 @@ export const Transfer = () => {
           </div>
         )}
         <section className="flex flex-col gap-2 px-4">
-          <h2 className="px-4 text-footnote uppercase text-muted">{t('transfer.amount')}</h2>
+          <h2 className="section-title px-1">{t('transfer.amount')}</h2>
           <AmountChips label={t('transfer.amount')} amounts={AMOUNTS} value={amount} onChange={setAmount} />
           <p className={cx('tnum px-1 text-footnote', tooMuch ? 'text-error' : 'text-muted')}>
             {tooMuch ? t('transfer.notEnough', { balance: m(me.balance) }) : `${t('card.balance')} ${m(me.balance)}`}
           </p>
         </section>
       </div>
-      <div className="sticky bottom-0 border-t border-line bg-canvas/95 px-4 pb-4 pt-3 backdrop-blur">
+      <div className="sticky bottom-0 z-10 border-t border-line bg-canvas/95 px-4 pb-4 pt-3 backdrop-blur">
         <Button block disabled={!ready} onClick={() => setConfirm(true)}>
           {t('transfer.send', { amount: m(amount) })}
         </Button>

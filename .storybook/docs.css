@@ -7,7 +7,7 @@
 .sbdocs li,
 .sbdocs td,
 .sbdocs th {
-  font-family: -apple-system, 'SF Pro Text', 'Roboto Variable', Roboto, sans-serif !important;
+  font-family: 'Onest Variable', -apple-system, sans-serif !important;
 }
 .sbdocs h1 {
   margin: 0 0 0.5rem;

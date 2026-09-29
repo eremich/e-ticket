@@ -36,7 +36,7 @@ export const StationPanel = ({ line, lineName, stepFree, directions, transfer, e
       </p>
 
       <section>
-        <h3 className="pb-1.5 text-footnote uppercase text-muted">{t('station.nextTrains')}</h3>
+        <h3 className="section-title px-0 pb-2">{t('station.nextTrains')}</h3>
         <ul className="divide-y divide-line rounded-group bg-canvas">
           {directions.map((d) => (
             <li key={d.towards} className="flex items-center justify-between gap-3 px-3 py-2.5">
@@ -66,7 +66,7 @@ export const StationPanel = ({ line, lineName, stepFree, directions, transfer, e
 
       {exits.length > 0 && (
         <section>
-          <h3 className="pb-1.5 text-footnote uppercase text-muted">{t('station.exits')}</h3>
+          <h3 className="section-title px-0 pb-2">{t('station.exits')}</h3>
           <ul className="flex flex-col gap-2">
             {exits.map((e, i) => (
               <li key={e.name} className="rounded-group bg-canvas p-3">

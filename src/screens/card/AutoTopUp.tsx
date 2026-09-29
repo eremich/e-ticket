@@ -43,7 +43,7 @@ export const AutoTopUp = () => {
       {auto.on && (
         <div className="rise flex flex-col gap-6 px-4">
           <section className="flex flex-col gap-2">
-            <h2 className="px-4 text-footnote uppercase text-muted">{t('auto.below')}</h2>
+            <h2 className="section-title px-1">{t('auto.below')}</h2>
             <div className="flex gap-2">
               {THRESHOLDS.map((v) => (
                 <Chip key={v} label={m(v)} selected={auto.below === v} onClick={() => set({ below: v })} />
@@ -51,7 +51,7 @@ export const AutoTopUp = () => {
             </div>
           </section>
           <section className="flex flex-col gap-2">
-            <h2 className="px-4 text-footnote uppercase text-muted">{t('auto.add')}</h2>
+            <h2 className="section-title px-1">{t('auto.add')}</h2>
             <div className="flex gap-2">
               {AMOUNTS.map((v) => (
                 <Chip key={v} label={m(v)} selected={auto.amount === v} onClick={() => set({ amount: v })} />

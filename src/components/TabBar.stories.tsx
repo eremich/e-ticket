@@ -10,7 +10,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Four labeled tabs: Home, Routes, Card, Profile. Classic iOS bar: solid surface with a hairline, no floating glass. A red dot on a tab means something needs attention (low balance on Card).',
+          'Four labeled tabs: Home, Routes, Card, Profile. Floating glass bar in the iOS 26 style; the selected capsule slides to the new tab. A red dot on a tab means something needs attention (low balance on Card).',
       },
     },
   },

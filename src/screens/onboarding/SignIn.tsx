@@ -51,7 +51,7 @@ export const SignIn = () => {
           }}
         >
           <div className="flex flex-col gap-1">
-            <label htmlFor={phoneId} className="px-1 text-footnote uppercase text-muted">
+            <label htmlFor={phoneId} className="section-title px-1">
               {t('signIn.phone')}
             </label>
             <div className={cx(fieldCls, phoneInvalid ? 'ring-error' : 'ring-line focus-within:ring-action')}>
@@ -82,7 +82,7 @@ export const SignIn = () => {
           </div>
           {sent && (
             <div className="rise flex flex-col gap-1">
-              <label htmlFor={codeId} className="px-1 text-footnote uppercase text-muted">
+              <label htmlFor={codeId} className="section-title px-1">
                 {t('signIn.code')}
               </label>
               <input

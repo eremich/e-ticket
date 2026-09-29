@@ -38,8 +38,8 @@ export const AmountChips = ({ amounts, value, onChange, other = false, custom = 
                 onChange(a);
               }}
               className={cx(
-                'press tnum h-13 rounded-control text-headline transition-colors duration-150',
-                on ? 'bg-action-soft text-action ring-2 ring-inset ring-action' : 'bg-surface text-ink ring-1 ring-inset ring-line',
+                'press tnum h-13 rounded-chip text-headline transition-colors duration-150',
+                on ? 'bg-accent text-on-accent' : 'bg-surface text-ink ring-1 ring-inset ring-line',
               )}
             >
               {money(t.lang, a)}
@@ -53,8 +53,8 @@ export const AmountChips = ({ amounts, value, onChange, other = false, custom = 
             aria-checked={custom}
             onClick={() => onCustom?.(true)}
             className={cx(
-              'press h-13 rounded-control text-headline transition-colors duration-150',
-              custom ? 'bg-action-soft text-action ring-2 ring-inset ring-action' : 'bg-surface text-ink ring-1 ring-inset ring-line',
+              'press h-13 rounded-chip text-headline transition-colors duration-150',
+              custom ? 'bg-accent text-on-accent' : 'bg-surface text-ink ring-1 ring-inset ring-line',
             )}
           >
             {t('topup.other')}

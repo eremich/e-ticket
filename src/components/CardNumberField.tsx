@@ -47,7 +47,7 @@ export const CardNumberField = ({ value, onChange }: CardNumberFieldProps) => {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex flex-col gap-1">
-        <label htmlFor={id} className="px-1 text-footnote uppercase text-muted">
+        <label htmlFor={id} className="section-title px-1">
           {t('addCard.numberTitle')}
         </label>
         <input

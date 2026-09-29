@@ -37,7 +37,7 @@ export const VisitorTicket = ({ kind, validUntil, rides, expired = false }: Visi
       <div className="flex flex-col gap-1 px-5 pb-5 pt-4">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <p className="text-footnote uppercase text-muted">{t('visitor.ticket')}</p>
+            <p className="section-title px-0">{t('visitor.ticket')}</p>
             <h2 className={cx('text-large-title', expired ? 'text-muted' : 'text-ink')}>{name}</h2>
           </div>
           {expired ? (

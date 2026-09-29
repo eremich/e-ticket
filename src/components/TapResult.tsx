@@ -39,9 +39,9 @@ const Mark = ({ tone, children }: { tone: 'ok' | 'error' | 'action'; children: R
     aria-hidden
     className={cx(
       'pop-in flex size-20 items-center justify-center rounded-chip',
-      tone === 'ok' && 'bg-ok text-on-action',
-      tone === 'error' && 'shake bg-error text-on-action',
-      tone === 'action' && 'bg-action text-on-action',
+      tone === 'ok' && 'bg-ok text-on-status',
+      tone === 'error' && 'shake bg-error text-on-status',
+      tone === 'action' && 'bg-accent text-on-accent',
     )}
   >
     {children}

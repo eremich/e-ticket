@@ -21,3 +21,5 @@ dist/
 
 # Dev check screenshots
 scripts/.out/
+
+.vercel

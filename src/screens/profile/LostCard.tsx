@@ -80,7 +80,7 @@ export const LostCard = () => {
         <p className="text-body text-muted">{t('lost.body')}</p>
       </div>
       <Footer>
-        <Button block className="!bg-error !text-on-action" onClick={() => setConfirm(true)}>
+        <Button block className="!bg-error !text-on-status" onClick={() => setConfirm(true)}>
           {t('lost.block')}
         </Button>
       </Footer>

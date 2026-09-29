@@ -17,8 +17,8 @@ export const useOption = (): PlannedOption | undefined => {
   const serviceChange = useStore((s) => s.serviceChange);
   const trip = useStore((s) => s.trip);
   const id = q.get('opt') ?? trip?.optionId;
-  if (!to) return undefined;
-  const all = planOptions(from, to, DEFAULT_FILTERS, serviceChange);
+  // A deep link without a chosen destination shows the default story: Home → Work
+  const all = planOptions(from, to ?? 'work', DEFAULT_FILTERS, serviceChange);
   return all.find((o) => o.id === id) ?? all[0];
 };
 
@@ -32,7 +32,7 @@ export const useSteps = () => {
   const from = useStore((s) => s.routeFrom);
   return (o: PlannedOption): StepWithStations[] => {
     const origin = placeById(from);
-    const dest = placeById(to ?? '');
+    const dest = placeById(to ?? 'work');
     const destLabel = dest ? name(dest.name) : '';
     const steps: StepWithStations[] = [];
     let clock = NOW;

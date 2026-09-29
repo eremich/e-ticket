@@ -11,7 +11,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "The hero of paying: Kharkiv's card as a recognizable object. Balance in 40 pt, trips left at the typical fare, and a white pill when something needs attention (low balance, blocked). The wordmark keeps the original E with its floating middle arm. Pills stay in the light palette on the face in both themes.",
+          "The hero of paying: Kharkiv's card as a recognizable object, a flat brand-blue face with no gradient or glow. Balance in 40 pt, trips left at the typical fare, and a white pill when something needs attention (low balance, blocked). The wordmark keeps the original E with its floating middle arm.",
       },
     },
   },

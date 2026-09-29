@@ -21,7 +21,7 @@ export const PushBanner = ({ app, title, body, time, onClick }: PushBannerProps)
     </span>
     <span className="min-w-0 flex-1">
       <span className="flex items-baseline justify-between gap-2">
-        <span className="text-footnote font-semibold uppercase text-muted">{app}</span>
+        <span className="section-title px-0">{app}</span>
         <span className="text-footnote text-muted">{time}</span>
       </span>
       <span className="block text-headline text-ink">{title}</span>

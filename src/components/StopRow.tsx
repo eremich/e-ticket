@@ -1,6 +1,5 @@
 import { CaretRight, Star, Wheelchair } from '@phosphor-icons/react';
 import { useT } from '../i18n';
-import { cx } from '../lib/cx';
 import type { Transport } from '../lib/icons';
 import { ArrivalChip, type ArrivalChipProps } from './ArrivalChip';
 import { TransportTile, type MetroLine } from './LineBadge';
@@ -32,7 +31,7 @@ export const StopRow = ({ name, walkMin, meters, transport, arrivals, favorite, 
         </span>
         <CaretRight aria-hidden weight="bold" className="size-4 shrink-0 text-muted/70" />
       </button>
-      <div className="scroll-x flex gap-2 px-4 pl-16">
+      <div className="scroll-x flex gap-2 pl-[56px] pr-4">
         {arrivals.map((a) => (
           <ArrivalChip key={`${a.transport}${a.number}`} {...a} />
         ))}
@@ -68,7 +67,7 @@ export const NearestStation = ({ name, line, lineName, walkMin, stepFree, direct
         </span>
         <CaretRight aria-hidden weight="bold" className="size-4 shrink-0 text-muted/70" />
       </button>
-      <div className={cx('scroll-x flex gap-2 px-4')}>
+      <div className="scroll-x flex gap-2 pl-[56px] pr-4">
         {directions.map((d) => (
           <ArrivalChip key={d.towards} {...d} />
         ))}

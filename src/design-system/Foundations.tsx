@@ -39,7 +39,7 @@ type ColorName = keyof typeof color;
 
 /** Fills are checked against the text that sits on them; everything else against surface and canvas */
 const PAIRS: Partial<Record<ColorName, ColorName>> = {
-  action: 'on-action',
+  accent: 'on-accent',
   'metro-badge': 'on-transport',
   'tram-badge': 'on-transport',
   'trolleybus-badge': 'on-transport',
@@ -116,7 +116,7 @@ export const TransportPage = () => (
   >
     {(['light', 'dark'] as const).map((theme) => (
       <div key={theme} data-theme={theme} className="mb-4 flex flex-col gap-4 rounded-group bg-canvas p-6 text-ink">
-        <p className="text-footnote font-semibold uppercase text-muted">{theme}</p>
+        <p className="section-title px-0">{theme}</p>
         <div className="flex flex-wrap items-center gap-3">
           {TRANSPORTS.map((t) => (
             <TransportTile key={t} transport={t} />
@@ -138,14 +138,14 @@ export const TransportPage = () => (
     ))}
     <ul className="mt-6 max-w-2xl list-disc pl-5 text-body text-ink">
       <li>Brief colors (metro, tram, trolleybus, bus) are for strokes, map markers and icons.</li>
-      <li>Badges use the *-badge fill with on-transport or on-bus text, AA in both themes.</li>
+      <li>Badges are colored icon and number with no plate: the *-ink shades pass AA on white, graphite and inside gray chips.</li>
       <li>Status colors (ok, warn, error) never stand in for a transport, and transport colors never mean a status.</li>
     </ul>
   </Page>
 );
 
 export const TypePage = () => (
-  <Page title="Typography" lead="SF Pro on Apple devices, Roboto elsewhere (Cyrillic included). iOS text styles. Tabular numerals for every time, balance and fare.">
+  <Page title="Typography" lead="Onest everywhere, a geometric face with full Cyrillic. iOS text styles and sizes. Tabular numerals for every time, balance and fare.">
     <div className="divide-y divide-line">
       {Object.entries(type).map(([name, t]) => (
         <div key={name} className="grid grid-cols-[180px_1fr] items-baseline gap-6 py-5">
@@ -222,7 +222,7 @@ export const ShapePage = () => (
     <div className="flex items-end gap-3">
       {space.steps.map((s) => (
         <div key={s} className="flex flex-col items-center gap-1">
-          <div className="bg-action" style={{ width: s, height: s }} />
+          <div className="bg-accent" style={{ width: s, height: s }} />
           <span className="tnum text-footnote text-muted">{s}</span>
         </div>
       ))}

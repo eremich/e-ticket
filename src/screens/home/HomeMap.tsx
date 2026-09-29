@@ -38,7 +38,7 @@ export const HomeMap = () => {
       <div role="group" aria-label={t('home.filters')} className="scroll-x -mx-4 flex gap-2 px-4">
         {FILTERS.map((f) => {
           const Icon = TRANSPORT_ICON[f];
-          return <Chip key={f} label={t(`transport.${f}`)} icon={<Icon aria-hidden weight="fill" className="size-4" />} selected={filter.includes(f)} onClick={() => toggle(f)} />;
+          return <Chip key={f} label={t(`transport.${f}`)} icon={<Icon aria-hidden weight="regular" className="size-4" />} variant="toggle" selected={filter.includes(f)} onClick={() => toggle(f)} />;
         })}
       </div>
       <div className="h-[460px] overflow-hidden rounded-group">

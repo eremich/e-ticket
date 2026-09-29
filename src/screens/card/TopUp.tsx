@@ -57,7 +57,7 @@ export const TopUp = () => {
           {t('card.balance')} <span className="font-semibold text-ink">{m(card.balance)}</span>
         </p>
         <section className="flex flex-col gap-2">
-          <h2 className="px-4 text-footnote uppercase text-muted">{t('topup.amount')}</h2>
+          <h2 className="section-title px-1">{t('topup.amount')}</h2>
           <AmountChips label={t('topup.amount')} amounts={AMOUNTS} value={amount} onChange={setAmount} other custom={custom} onCustom={setCustom} min={MIN} max={MAX} />
         </section>
         <div className="-mx-4">
@@ -83,7 +83,7 @@ export const TopUp = () => {
           </Banner>
         )}
       </div>
-      <div className="sticky bottom-0 flex flex-col gap-2 border-t border-line bg-canvas/95 px-4 pb-4 pt-3 backdrop-blur">
+      <div className="sticky bottom-0 z-10 flex flex-col gap-2 border-t border-line bg-canvas/95 px-4 pb-4 pt-3 backdrop-blur">
         <p className="tnum text-center text-footnote text-muted">{t('topup.after', { amount: m(card.balance + (valid ? amount : 0)) })}</p>
         {method === 'applepay' ? (
           <ApplePayButton label={t('tap.topUpWith', { amount: m(amount) })} onClick={() => valid && setPaying(true)} />
@@ -124,7 +124,7 @@ export const TopUpDone = () => {
         <p className="text-body text-muted">{t('topup.doneBody')}</p>
       </div>
       <section className="rise mt-8">
-        <h2 className="px-4 pb-1.5 text-footnote uppercase text-muted">{t('topup.receipt')}</h2>
+        <h2 className="section-title pb-2">{t('topup.receipt')}</h2>
         <dl className="divide-y divide-line rounded-group bg-surface">
           {rows.map(([k, v]) => (
             <div key={k} className="flex justify-between gap-4 px-4 py-3">

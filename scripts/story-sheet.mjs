@@ -10,9 +10,15 @@ const shots = [];
 for (const spec of ids) {
   if (spec.startsWith('/')) {
     await page.setViewportSize({ width: 600, height: 920 });
-    await page.goto(`http://localhost:5174${spec}`);
+    // "/path?query#bottom" scrolls the screen to its end before the capture
+    const [path, anchor] = spec.split('#');
+    await page.goto(`http://localhost:5174${path}`);
     await page.waitForSelector('#phone', { timeout: 20000 });
     await page.waitForTimeout(900);
+    if (anchor === 'bottom') {
+      await page.evaluate(() => document.querySelector('#screen')?.scrollTo(0, 99999));
+      await page.waitForTimeout(300);
+    }
     const phone = page.locator('#phone');
     shots.push({ id: spec, b64: (await phone.screenshot()).toString('base64') });
     await page.setViewportSize({ width: 420, height: 820 });

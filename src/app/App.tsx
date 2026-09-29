@@ -33,6 +33,7 @@ import { ToPhone } from '../screens/profile/ToPhone';
 import { ReducedFare } from '../screens/profile/ReducedFare';
 import { Notifications } from '../screens/profile/Notifications';
 import { Accessibility } from '../screens/profile/Accessibility';
+import { AppearanceChoice, LanguageChoice } from '../screens/profile/Choice';
 import { Visitor } from '../screens/visitor/Visitor';
 import { VisitorTicketScreen } from '../screens/visitor/VisitorTicketScreen';
 
@@ -77,6 +78,8 @@ export const App = () => (
         <Route path="profile/reduced" element={<ReducedFare />} />
         <Route path="profile/notifications" element={<Notifications />} />
         <Route path="profile/accessibility" element={<Accessibility />} />
+        <Route path="profile/language" element={<LanguageChoice />} />
+        <Route path="profile/appearance" element={<AppearanceChoice />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

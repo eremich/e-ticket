@@ -105,7 +105,7 @@ export const LiveTrip = () => {
             </p>
             {exitStop && (
               <div className="flex flex-col gap-2">
-                <p className="text-footnote uppercase text-muted">
+                <p className="section-title px-0">
                   {t('live.onward')} · {name(exitStop.name)}
                 </p>
                 <div className="flex flex-wrap gap-2">

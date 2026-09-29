@@ -2,6 +2,7 @@ import { useEffect, useRef, type ReactNode } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { BatteryFull, CellSignalFull, CreditCard, House, Path, User, WifiHigh } from '@phosphor-icons/react';
 import { TabBar, type TabItem } from '../components/TabBar';
+import { cx } from '../lib/cx';
 import { Button } from '../components/Button';
 import { Toggle } from '../components/Toggle';
 import { TapOverlay } from '../screens/pay/TapOverlay';
@@ -165,15 +166,20 @@ export const Shell = ({ children }: { children?: ReactNode }) => {
         className="relative flex h-[100dvh] w-full flex-col overflow-clip bg-canvas text-ink phone:h-[844px] phone:w-[390px] phone:rounded-phone phone:shadow-phone"
       >
         <StatusBar />
-        <main ref={main} id="screen" className="scroll-area relative flex flex-1 flex-col">
+        {/* With the floating tab bar, content scrolls under it; the bottom padding keeps the last item reachable */}
+        <main ref={main} id="screen" className={cx('scroll-area relative flex flex-1 flex-col', active && 'pb-24')}>
           {children ?? <Outlet />}
         </main>
         {active && (
-          <TabBar
-            items={TABS.map((x) => ({ ...x, label: t(`tab.${x.key}` as 'tab.home') }))}
-            active={active.key}
-            onSelect={(k) => navigate(TABS.find((x) => x.key === k)!.path)}
-          />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-tabbar px-4 pb-[max(20px,env(safe-area-inset-bottom))]">
+            <div className="pointer-events-auto">
+              <TabBar
+                items={TABS.map((x) => ({ ...x, label: t(`tab.${x.key}` as 'tab.home') }))}
+                active={active.key}
+                onSelect={(k) => navigate(TABS.find((x) => x.key === k)!.path)}
+              />
+            </div>
+          </div>
         )}
         <div id="sheet-root" className="pointer-events-none absolute inset-0 z-sheet" />
         <TapOverlay />

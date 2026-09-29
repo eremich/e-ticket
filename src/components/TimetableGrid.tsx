@@ -25,7 +25,7 @@ export const TimetableGrid = ({ times, now }: TimetableGridProps) => {
         {byHour(times).map(([h, mins]) => {
           const current = next !== undefined && Math.floor(next / 60) === h;
           return (
-            <tr key={h} className={cx(current && 'bg-action-soft/60')}>
+            <tr key={h} className={cx(current && 'bg-raised/70')}>
               <th scope="row" className={cx('w-14 border-b border-line py-2.5 pl-4 align-top text-headline', h * 60 + 59 < now ? 'text-muted' : 'text-ink')}>
                 {String(h).padStart(2, '0')}
               </th>
@@ -40,7 +40,7 @@ export const TimetableGrid = ({ times, now }: TimetableGridProps) => {
                         aria-current={isNext ? 'time' : undefined}
                         className={cx(
                           'min-w-9 rounded-inner px-1.5 py-0.5 text-center text-body',
-                          isNext ? 'bg-action font-semibold text-on-action' : at < now ? 'text-muted/70' : 'text-ink',
+                          isNext ? 'bg-accent font-semibold text-on-accent' : at < now ? 'text-muted/70' : 'text-ink',
                         )}
                       >
                         {String(m).padStart(2, '0')}

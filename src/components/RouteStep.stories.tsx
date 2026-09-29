@@ -10,7 +10,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Steps of a route on a vertical rail: time, what to do, and the live detail on the right. Rides draw a solid rail in the line color, walks and transfers a dotted one. On a live trip the current step is tinted and finished steps fade.',
+          'Steps of a route on a vertical rail: time, what to do, and the live detail on the right. Rides draw a solid rail in the line color, walks and transfers a dotted one. On a live trip the current step gets the only brand tint on the screen and finished steps fade.',
       },
     },
   },

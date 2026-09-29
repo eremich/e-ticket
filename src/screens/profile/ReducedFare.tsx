@@ -58,7 +58,7 @@ export const ReducedFare = () => {
       <div className="screen-enter flex flex-1 flex-col">
         <NavBar title={t('reducedScreen.title')} onBack={back} backLabel={t('tab.profile')} />
         <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 pb-10 text-center">
-          <span aria-hidden className="flex size-24 items-center justify-center rounded-eticket bg-action-soft text-action">
+          <span aria-hidden className="flex size-24 items-center justify-center rounded-eticket bg-raised text-ink">
             <IdentificationCard weight="regular" className="size-12" />
           </span>
           <h1 className="text-title2 text-ink">{t('reducedScreen.noneTitle')}</h1>
@@ -88,7 +88,7 @@ export const ReducedFare = () => {
             </div>
           ) : (
             <>
-              <span aria-hidden className="flex size-24 items-center justify-center rounded-eticket bg-action-soft text-action">
+              <span aria-hidden className="flex size-24 items-center justify-center rounded-eticket bg-raised text-ink">
                 <ImageSquare weight="regular" className="size-12" />
               </span>
               <h1 className="text-title2 text-ink">{t('reduced.upload', { doc })}</h1>
@@ -121,7 +121,7 @@ export const ReducedFare = () => {
       <NavBar large title={t('reducedScreen.title')} onBack={back} backLabel={t('tab.profile')} />
       <section className="px-4">
         <div className="flex items-center gap-4 rounded-group bg-surface p-4">
-          <span aria-hidden className="flex size-12 shrink-0 items-center justify-center rounded-control bg-action-soft text-action">
+          <span aria-hidden className="flex size-12 shrink-0 items-center justify-center rounded-control bg-raised text-ink">
             <GraduationCap weight="regular" className="size-6" />
           </span>
           <div className="min-w-0">
@@ -147,7 +147,7 @@ export const ReducedFare = () => {
       )}
 
       <section className="px-4">
-        <h2 className="px-4 pb-1.5 text-footnote uppercase text-muted">{t('reducedScreen.renewal')}</h2>
+        <h2 className="section-title pb-2">{t('reducedScreen.renewal')}</h2>
         <div className="rounded-group bg-surface p-4">
           <StatusTimeline label={t('reducedScreen.renewal')} steps={renewal(phase, renewedFrom, uploaded)} />
         </div>
