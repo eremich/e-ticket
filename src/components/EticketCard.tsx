@@ -3,19 +3,18 @@ import { useT } from '../i18n';
 import { date, money } from '../lib/format';
 import { cx } from '../lib/cx';
 
-/** The Eticket wordmark: an E whose middle arm floats free of the spine, as on the original card */
+/**
+ * The Eticket logotype, taken from the brand slide: the E's counter is a ticket's punch notch and hole.
+ * A mask of the original artwork, so it takes the current text color (white on blue, brand on white).
+ * Height follows the font size of the context.
+ */
 export const EticketLogo = ({ className }: { className?: string }) => (
-  <span className={cx('inline-flex items-baseline gap-[0.06em] font-bold tracking-tight', className)}>
-    <svg aria-hidden viewBox="0 0 18 24" className="h-[0.72em] w-auto self-center fill-current" style={{ marginTop: '-0.08em' }}>
-      <rect x="0" y="0" width="5" height="9" rx="1" />
-      <rect x="0" y="15" width="5" height="9" rx="1" />
-      <rect x="0" y="0" width="17" height="5" rx="1" />
-      <rect x="7" y="9.5" width="10" height="5" rx="1" />
-      <rect x="0" y="19" width="17" height="5" rx="1" />
-    </svg>
-    <span>ticket</span>
-    <span className="sr-only">Eticket</span>
-  </span>
+  <span
+    role="img"
+    aria-label="Eticket"
+    className={cx('inline-block aspect-[4.13] h-[0.8em] shrink-0 bg-current align-[-0.05em]', className)}
+    style={{ WebkitMask: 'url(/brand-eticket-logo.png) center / contain no-repeat', mask: 'url(/brand-eticket-logo.png) center / contain no-repeat' }}
+  />
 );
 
 export interface EticketCardProps {
